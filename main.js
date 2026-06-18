@@ -22,3 +22,41 @@ const green = createColor(0, 255, 0);
 
 console.log(red.hex()); // #ff0000
 console.log(green.rgb()); // rgb(0, 255, 0)
+
+
+// mendefinisikan object dengan class
+class color {
+    constructor(r,g,b){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+    }
+
+
+
+    rgb(){
+        const {r, g, b} = this;
+        return `rgb(${r},${g},${b})`;
+    }
+
+}
+let kuning = new color(255, 196, 0);
+document.body.style.backgroundColor = kuning.rgb();
+
+
+
+class Game {
+    constructor(nama, peran, darah){
+        this.nama = nama;
+        this.peran = peran;
+        this.darah = darah;
+    }
+
+    aksi(){
+        let {nama, peran, darah} = this;
+        return `${nama} sedang melakukan penyerangan`;
+    }
+}
+
+const hero1 = new game('furina','support',15000);
+console.log(hero1.aksi());
